@@ -11,16 +11,23 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import sys
 
+from django.core.management.utils import get_random_secret_key
+
+SECRET_KEY = get_random_secret_key()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+
+APLICACIONES = BASE_DIR / 'apps'
+sys.path.append(str(APLICACIONES))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-tle_m8^(l5#0u4sl7#ywi&&@591+^jiv+=@k+i5m^px@7vxrjf'
+SECRET_KEY = 'django-insecure-_^dbjl2!sli0xdw@_8(j%zq7603g!pb4-v1aek7lftxcwl#1v#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
 ]
 
 MIDDLEWARE = [
