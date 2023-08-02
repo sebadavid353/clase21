@@ -50,7 +50,7 @@ INSTALLED_APPS = [
 
 #apps propias
 INSTALLED_APPS +=[
-    'home'
+    'home',
     'producto',
     'venta',
     
