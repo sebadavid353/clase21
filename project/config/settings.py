@@ -45,8 +45,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'venta',
+    
+]
+
+#apps propias
+INSTALLED_APPS +=[
+    'home'
     'producto',
+    'venta',
+    
 ]
 
 MIDDLEWARE = [
