@@ -1,0 +1,16 @@
+{% extends 'producto/index.html' %}
+
+
+{% block content_producto %}
+    <h2>Lista de categorias de Productos</h2>   
+    
+    {% for categoria in categorias%}
+        <ul>
+            <li>
+            {{categoria}}
+            </li>
+        </ul>
+        
+    {% endfor %}
+        <a href="{% url 'producto:index' %}">Volver a indice de Productos</a>
+{% endblock content_producto %} 

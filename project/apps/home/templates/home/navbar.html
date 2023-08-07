@@ -8,9 +8,13 @@
                 <li class="nav-item ms-auto"> <!-- Aplicamos la clase "ms-auto" a este li -->
                     <a class="nav-link active" with aria-current="page" href="{% url 'home:index' %}" style='position: relative;right: 700px';>INICIO</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#!">iphone</a></li>
+                {% block CONTENT-IPHONE %}
+                    
+                <li class="nav-item"><a class="nav-link" href="{% url 'producto:iphone' %}">iphone</a></li>
+                {% endblock CONTENT-IPHONE %}
+
                 <li class="nav-item"><a class="nav-link" href="#!">MackBook</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'producto:index' %}">Ipad</a></li> 
+                <li class="nav-item"><a class="nav-link" href="{% url 'producto:index' %}">productos</a></li> 
                 <li class="nav-item"><a class="nav-link" href="{% url 'venta:index' %}">Watch</a></li>
                 <li class="nav-item"><a class="nav-link" href="#!">Accesorios</a></li>
                 <li class="nav-item"><a class="nav-link" href="#!">Servicio Tecnico</a></li>
