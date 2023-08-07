@@ -12,7 +12,3 @@ def producto_categoria_list(request):
     context = {'categorias': categorias}
     return render(request, "producto/producto_categoria_list.html", context)
 
-def iphone(request):
-    categorias = models.iphone.objects.all()
-    context = {'categorias': categorias}
-    return render(request, "producto/iphone.html",context)
