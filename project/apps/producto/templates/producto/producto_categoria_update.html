@@ -2,12 +2,12 @@
 
 {% block content_producto %}
 
-<h2>Crear Categorias de Productos</h2>
+<h2>Editar Categorias de Productos</h2>
 
     <form method="post">
         {% csrf_token %}
         {{form.as_p}}
-        <button type="submit">Crear</button>
+        <button type="submit">Guardar</button>
     </form>
         <a href="{% url 'producto:index' %}">Volver a indice de Productos</a>
 

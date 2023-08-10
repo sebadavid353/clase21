@@ -1,0 +1,14 @@
+{% extends 'producto/index.html' %}
+
+
+{% block content_producto %}
+    <h2>Eliminacion de productos </h2>
+
+    <p>confirmas eliminar?{{categoria}}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar</button>
+    </form>
+
+{% endblock content_producto %}
