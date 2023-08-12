@@ -41,3 +41,5 @@ class ProductoCategoriaUpdate(UpdateView):
     form_class = forms.ProductoCategoriaForm
     template_name = "producto/producto_categoria_update.html"
     success_url = reverse_lazy('producto:producto_categoria_list')
+
+
