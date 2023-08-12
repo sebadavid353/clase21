@@ -16,10 +16,10 @@ from django.contrib.auth.forms import AuthenticationForm
 
 def login_request(request):
     if request.method == "POST":    
-        form = AuthenticationForm(request.POST)
+        form = AuthenticationForm(request.POST, data = request.POST)
         if form.is_valid():
             usuario = form.cleaned_data.get('username')
-            contraseña = form.cleaned_data.get()('password')
+            contraseña = form.cleaned_data.get('password')
             user = authenticate(username=usuario, password=contraseña)
             if user is not None:
                 login(request, user)
