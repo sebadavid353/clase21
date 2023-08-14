@@ -6,20 +6,26 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item ms-auto"> <!-- Aplicamos la clase "ms-auto" a este li -->
-                    <a class="nav-link active" with aria-current="page" href="{% url 'home:index' %}" style='position: relative;right: 700px';>INICIO</a>
+                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" with aria-current="page" href="{% url 'home:index' %}" style='position: relative;right: 500px';>INICIO</a>
                 </li>
 
-                <li class="nav-item"><a class="nav-link" href="#!">iphone</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == 'iphone' %}active{% endif %}" href="#!">iphone</a></li>
 
-                <li class="nav-item"><a class="nav-link" href="#!">MackBook</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'producto:index' %}">productos</a></li> 
-                <li class="nav-item"><a class="nav-link" href="{% url 'venta:index' %}">Watch</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">Accesorios</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">Servicio Tecnico</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == 'mackbook' %}active{% endif %}" href="#!">MackBook</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link {% if request.path == 'producto' %}active{% endif %}" href="{% url 'producto:index' %}">productos</a></li> 
+                <li class="nav-item"><a class="nav-link text-bg-dark">{{ user.username }}</a></li>  
+                <li class="nav-item"><a class="nav-link text-info {% if request.path == '/' %}active{% endif %}" href="{% url 'home:logout' %}">logout </a></li>
+
+                {% endif %}
+                <li class="nav-item" href="https://wa.me/573123456789"><a class="nav-link {% if request.path == 'watch' %}active{% endif %}" href="{% url 'venta:index' %}">Contactanos</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == 'accesorios' %}active{% endif %}" href="#!">Accesorios</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == 'servicio' %}active{% endif %}" href="#!">Servicio Tecnico</a></li>
+                <li class="nav-item"><a class="nav-link text-info {% if request.path == '/' %}active{% endif %}" href="{% url 'home:login' %}">Login </a></li>
 
 
 
-
+  
             </ul>
         </div>
     </div>

@@ -20,7 +20,7 @@ class ProductoCategoriaList(ListView):
     template_name = "producto/producto_categoria_list.html" #nombre de la plantilla
     context_object_name = 'categorias'
 
-
+#loginrequired/requiredmixin para evitar que alguien que no es del stadd pueda crear productos etc 
 class ProductoCategoriaCreate(CreateView):
     model = models.ProductoCategoria
     form_class = forms.ProductoCategoriaForm  #que formulario se va a usar

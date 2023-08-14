@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from . import forms
+
 # Create your views here.
 
    
@@ -11,7 +13,7 @@ def index(request):
 
 
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import AuthenticationForm 
+from django.contrib.auth.forms import AuthenticationForm , UserCreationForm
 
 
 def login_request(request):
@@ -27,3 +29,18 @@ def login_request(request):
     else:
         form = AuthenticationForm()
     return render(request, "home/login.html", {'form':form})
+
+
+
+#registro basado en funciones
+    
+def register(request):
+    if request.method == "POST":
+        form = forms.CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            form.save()
+            return render (request, "home/index.html", {"mensaje":'Usuario Creado'})
+    else:
+        form = forms.CustomUserCreationForm()
+    return render(request, "home/register.html",{"form":form})

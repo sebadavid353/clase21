@@ -1,6 +1,18 @@
 {% extends 'home/base.html' %}
 
+
 {% block CONTENT %}
+
+{% if user.is_authenticated %}
+    <p>{{mensaje}}</p>
+    
+{% if user.is_staff %}
+ <p><a href="{% url 'admin:index' %}">Administracion</a></p>
+ <p><a href="{% url 'home:index' %}">Registrar nuevo vendedor</a></p>
+
+{% endif %}
+{% endif %}
+
 <div class="row gx-4 gx-lg-5 align-items-center my-5">
     <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://lh3.googleusercontent.com/p/AF1QipMuINNFdq19PrJY0oMvWZQeSALxpgGzM_3dU13c=s1360-w1360-h1020" alt="..." /></div>
     <div class="col-lg-5">
