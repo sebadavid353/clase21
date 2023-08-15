@@ -11,3 +11,12 @@ class ProductoCategoriaAdmin(admin.ModelAdmin):
     search_fields = ("nombre",)
     list_filter = ("nombre",)
     ordering = ("nombre",)
+
+
+class Productoadmin(admin.ModelAdmin):
+    list_display = ("nombre", "descripcion")
+    search_fields = ("nombre",)
+    list_filter = ("nombre",)
+    ordering = ("nombre",)
+
+admin.site.register(models.Producto, Productoadmin)
